@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+}
+
+.container .tenor-gif-embed {
+  display: flex;
+  max-width: 200px;
+}
+
+.container .btn {
+  display: flex;
+  gap: 25px;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #ffffff;
+  background: #000000;
+  padding: 10px 25px;
+  border-radius: 8px;
+  box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn .si:hover {
+  background: #28a745;
+  transform: scale(1.1);
+  box-shadow: 0.7rem 1.2rem 3.5rem rgba(0, 0, 0, 0.4);
+}
+
+.btn .no:hover {
+  background: #555555;
+  transform: scale(1.1);
+  box-shadow: 0.7rem 1.2rem 3.5rem rgba(0, 0, 0, 0.4);
+}
+.atra{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+}
+.atra :hover{
+  background: red;
+  transform: scale(1.1);
+  box-shadow: 0.7rem 1.2rem 3.5rem rgba(0, 0, 0, 0.4);
+}
+h3{
+  text-decoration: none;
+  color: #ffffff;
+  background: #000000;
+  padding: 10px 25px;
+  border-radius: 8px;
+  box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+  transition: all 0.3s ease;
+}
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(360deg);
+  
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+.gato :hover{
+  animation: spin 2s ease-in-out;
+  border-radius: 10%;
+
+}

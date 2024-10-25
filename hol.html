@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Restringido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ingrese el código para continuar</h1>
+        <input type="password" id="accessCode" placeholder="Código" />
+        <button onclick="checkAccess()">Enviar</button>
+        <p id="message" style="color: red; display: none;">Código incorrecto, intente nuevamente.</p>
+    </div>
+
+    <script>
+        let isCodeCorrect = false;
+
+        function checkAccess() {
+            const correctCode = "12345"; // Cambia esto al código que quieras
+            const userCode = document.getElementById("accessCode").value;
+
+            if (userCode === correctCode) {
+                isCodeCorrect = true;
+                alert("Código correcto, ya puedes cambiar de pestaña.");
+            } else {
+                document.getElementById("message").style.display = "block";
+            }
+        }
+
+        // Detectar el cambio de pestaña
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden && !isCodeCorrect) {
+                alert("Debes ingresar el código correcto para cambiar de pestaña.");
+                document.title = "¡No te vayas!";
+            } else {
+                document.title = "Acceso Restringido";
+            }
+        });
+    </script>
+</body>
+</html>
